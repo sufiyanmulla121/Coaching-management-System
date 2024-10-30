@@ -5,4 +5,4 @@ node_modules
 .env
 
 # Service Account variables
-.serviceAccount.json
+serviceAccountJson.json
