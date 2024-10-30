@@ -5,4 +5,4 @@ node_modules
 .env
 
 # Service Account variables
-"../Coaching-management-System/src/security/serviceAccount.json"
+.serviceAccount.json
