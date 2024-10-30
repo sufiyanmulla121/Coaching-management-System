@@ -1,7 +1,7 @@
 import express, { Request, Response, NextFunction } from "express";
 import sequelize from "./config/db_config";
 import admin from "firebase-admin";
-import serviceAccount from "./security/serviceAccount.json";
+import serviceAccount from "../serviceAccount.json";
 import bodyParser from "body-parser";
 import routes from "./routes";
 import cors from "cors";
