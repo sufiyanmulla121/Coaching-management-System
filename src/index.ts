@@ -1,7 +1,19 @@
 import express, { Request, Response, NextFunction } from "express";
-import { dbConnection } from "../src/config/db_config";
+import sequelize from "./config/db_config";
+import admin from "firebase-admin";
+import serviceAccount from "./security/serviceAccount.json";
+import bodyParser from "body-parser";
+import routes from "./routes";
+import cors from "cors";
 
-dbConnection
+const app = express();
+const port = process.env.port;
+
+app.use(cors());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
+sequelize
   .authenticate()
   .then(() => {
     console.log("Database Connected Successfully");
@@ -10,12 +22,14 @@ dbConnection
     console.log("Error :" + err);
   });
 
-const app = express();
-
-const port = 3000;
-
 app.get("/", (req: Request, res: Response) => {
-  res.send({ message: "Welcome To firebase Login" });
+  res.send({ message: "Welcome To Coaching Management" });
+});
+
+app.use("/api", routes);
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount as admin.ServiceAccount),
 });
 
 app.listen(port, () => {
