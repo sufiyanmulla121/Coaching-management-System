@@ -14,8 +14,8 @@ export function generateRegistrationEmail(student: StudentDetails) {
       <li><b>Student ID:</b> ${student.student_id}</li>
     </ul>
 
-    You can access the portal and begin using your student account by following this link: <a href="Xyz">Login Here</a><br><br>
-
+    You can access the portal and begin using your student account by following this link: <a href="http://localhost/SM/Coachings">Login Here</a><br><br>
+ 
     <b>Parental Monitoring and Communication</b><br>
     We value the involvement of parents in their child's education. To keep you updated on your child’s progress and activities, the following contact information has been provided:<br>
     <ul>

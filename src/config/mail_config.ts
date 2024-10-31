@@ -1,5 +1,5 @@
 import nodemailer from "nodemailer";
-import { generateRegistrationEmail } from "../constants/registrationTempleteConstant";
+import { generateRegistrationEmail } from "../constants/registration_templete_Constant";
 
 export interface StudentDetails {
   student_id: number;
