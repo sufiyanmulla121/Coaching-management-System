@@ -3,12 +3,23 @@ import { Op, QueryTypes, literal } from "sequelize";
 import { Student } from "../model/students";
 import { messaging } from "firebase-admin";
 import { IsEmail } from "sequelize-typescript";
+import { sendRegistrationMail } from "../config/mail_config";
+import nodemailer from "nodemailer";
+import { StudentDetails } from "../config/mail_config";
+
+
+
 
 export class StudentController {
   static async addStudent(req: Request, res: Response) {
     try {
       const student = await Student.create(req.body);
-      res.status(201).json({ message: "Student Added SuccessFully", student });
+      sendRegistrationMail(student as StudentDetails);
+      console.log("Mail sent successfully");
+      res.status(201).json({
+        message: "Student Added SuccessFully",
+        student,
+      });
     } catch (error) {
       console.error("Error Adding Student", error);
       res.status(500).json({ error: "Failed To create Student" });

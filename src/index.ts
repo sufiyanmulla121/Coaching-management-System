@@ -5,6 +5,7 @@ import serviceAccount from "../serviceAccount.json";
 import bodyParser from "body-parser";
 import routes from "./routes";
 import cors from "cors";
+import nodemailer from "nodemailer";
 
 const app = express();
 const port = process.env.port;
