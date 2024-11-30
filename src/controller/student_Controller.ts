@@ -1,11 +1,6 @@
 import { Request, Response } from "express";
-import { Op, QueryTypes, literal } from "sequelize";
+import { StudentDetails, sendRegistrationMail } from "../config/mail_config";
 import { Student } from "../model/students";
-import { messaging } from "firebase-admin";
-import { IsEmail } from "sequelize-typescript";
-import { sendRegistrationMail } from "../config/mail_config";
-import nodemailer from "nodemailer";
-import { StudentDetails } from "../config/mail_config";
 
 
 

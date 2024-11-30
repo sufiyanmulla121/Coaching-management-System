@@ -26,3 +26,4 @@ export class Student extends Model<Student> {
   @Column({ type: DataType.STRING, allowNull: false })
   parents_email!: string;
 }
+  

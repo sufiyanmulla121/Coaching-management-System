@@ -41,3 +41,38 @@ export function generateRegistrationEmail(student: StudentDetails) {
     <em>Your Partner in Academic Excellence</em><br>
   `;
 }
+
+
+
+export function generateAbsentRemarkEmail(student: StudentDetails) {
+  return `
+    <b>Dear Parent/Guardian of ${student.student_name},</b><br><br>
+
+    We hope this message finds you well. We are reaching out from <b>SM Group of Coaching Centers</b> to inform you that your child, <b>${
+      student.student_name
+    }</b>, was marked <b>absent</b> today in class.<br><br>
+
+    <b>Student Details:</b><br>
+    <ul>
+      <li><b>Student Name:</b> ${student.student_name}</li>
+      <li><b>Class:</b> ${student.student_class}</li>
+      <li><b>Section:</b> ${student.student_section}</li>
+      <li><b>Student ID:</b> ${student.student_id}</li>
+      <li><b>Date of Absence:</b> ${new Date().toLocaleDateString()}</li>
+    </ul>
+
+    <b>Importance of Regular Attendance</b><br>
+    Regular attendance is crucial for the continuity of learning and to help your child stay on track academically. We highly value your partnership in ensuring that they are present and engaged in class each day.<br><br>
+
+    <b>Parental Support and Monitoring</b><br>
+    Please ensure you discuss with your child any potential reasons for their absence and inform us if there are any circumstances we should be aware of.<br><br>
+
+    If you need assistance or would like further details, do not hesitate to contact us. We are here to support you and your child’s educational journey.<br><br>
+
+    Thank you for your attention to this matter.<br><br>
+
+    Sincerely,<br><br>
+    <b>SM Group of Coaching Centers</b><br>
+    <em>Your Partner in Academic Excellence</em><br>
+  `;
+}
